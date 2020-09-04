@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  
+  &__time, &__date {
+    font-size: 5rem;
+    font-weight: 500;
+    @media screen and (max-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+}
+  
