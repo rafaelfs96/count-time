@@ -21,3 +21,28 @@ export const format = ({day, month, year, hour, minute, second}) => {
 
   return { day, month, year, hour, minute, second }
 }
+
+export const timeBetween = ({startDate = new Date(), endDate = new Date()}) => {
+  let delta = Math.abs(endDate - startDate) / 1000
+  const isNegative = startDate > endDate ? -1 : 1
+
+  const time = [
+    ['weeks', 7 * 24 * 60 * 60],
+    ['days', 24 * 60 * 60],
+    ['hours', 60 * 60],
+    ['minutes', 60],
+    ['seconds', 1]
+  ].reduce((acc, [key, value]) => {
+    let temp = Math.floor(delta / value)
+    if (temp === 0) return acc
+    else return (acc[key] = temp * isNegative, delta -= acc[key] * isNegative * value, acc)
+  }, {})
+
+  let finalTime = []
+
+  for (const key in time) {
+      finalTime.push(`${time[key]} ${key}`)
+  }
+
+  return finalTime.join(', ')
+}
