@@ -40,8 +40,8 @@ export const timeBetween = ({startDate = new Date(), endDate = new Date()}) => {
 
   let finalTime = []
 
-  for (const key in time) {
-      finalTime.push(`${time[key]} ${key}`)
+  for (const unit in time) {
+      finalTime.push(`${time[unit]} ${unit}`)
   }
 
   return finalTime.join(', ')
