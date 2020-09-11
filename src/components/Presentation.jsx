@@ -1,7 +1,6 @@
+import './Presentation.scss'
 import React from 'react'
 
 export default props => {
-  return (
-    <div>{ props.time }</div>
-  )
+  return <div className='presentation'>{ props.time }</div>
 }

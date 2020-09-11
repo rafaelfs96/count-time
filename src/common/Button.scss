@@ -1,0 +1,23 @@
+.button {
+  padding: 10px 20px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: transparent;
+  transition: all .1s ease;
+  cursor: pointer;
+  &--primary {
+    background-color: blue;
+    color: white;
+  }
+  &--danger {
+    background-color: red;
+    color: white;
+  }
+  &:active {
+    transform: scale(.97);
+  }
+}
