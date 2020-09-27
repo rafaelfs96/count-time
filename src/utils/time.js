@@ -46,7 +46,3 @@ export const timeBetween = ({startDate = new Date(), endDate = new Date()}) => {
 
   return finalTime.join(', ')
 }
-
-export const formattedTime = () => {
-  return format(time())
-}

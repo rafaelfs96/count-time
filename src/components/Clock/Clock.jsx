@@ -1,9 +1,9 @@
 import styles from './Clock.module.scss'
 import React, { useState, useEffect } from 'react'
 
-import { time, format } from '../utils/time'
+import { time, format } from '../../utils/time'
 
-export default props => {
+export default () => {
   const [date, setTime] = useState(time())
 
   useEffect(() => {

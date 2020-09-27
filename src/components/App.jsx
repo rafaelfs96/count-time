@@ -1,8 +1,8 @@
 import styles from './App.module.scss'
 import React from 'react'
 
-import Clock from './Clock'
-import TimeBetween from './TimeBetween'
+import Clock from './Clock/Clock'
+import TimeBetween from './TimeBetween/TimeBetween'
 
 function App() {
   return (

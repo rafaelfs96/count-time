@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { formattedTime, timeBetween } from '../utils/time'
+import { timeBetween } from '../../utils/time'
 
-import DatePicker from './DatePicker'
-import DatePickerStyles from './DatePicker.module.scss'
-import Presentation from './Presentation'
-import Button from '../common/Button'
+import DatePicker from '../DatePicker/DatePicker'
+import TimeBetweenStyles from './TimeBetween.module.scss'
+import Presentation from '../Presentation/Presentation'
+import Button from '../../common/Button/Button'
 
-export default props => {
-  const { year, month, day, hour, minute } = formattedTime()
-
-  const [start, setStart] = useState({ date: `${year}-${month}-${day}T${hour}:${minute}`, useNow: false })
+export default () => {
+  const [start, setStart] = useState({ date: new Date(), useNow: false })
   const [end, setEnd] = useState({ date: '', useNow: true })
   const [results, setResult] = useState('')
 
@@ -27,14 +25,14 @@ export default props => {
 
   return (
     <React.Fragment>
-      <div className={DatePickerStyles.datepicker}>
+      <div className={TimeBetweenStyles.datepicker}>
         <DatePicker text='Data Inicial' id='startDate' value={ start.date }
-          useNow={ start.useNow } change={ setStart } scss={ DatePickerStyles.datepicker__calendar } />
+          useNow={ start.useNow } change={ setStart } scss={ TimeBetweenStyles.datepicker__calendar } />
         <DatePicker text='Data Final' id='endDate' value={ end.date }
-          useNow={ end.useNow } change={ setEnd } scss={ DatePickerStyles.datepicker__calendar } />  
+          useNow={ end.useNow } change={ setEnd } scss={ TimeBetweenStyles.datepicker__calendar } />  
       </div>
 
-      <Button click={ updateResults } text='calculate difference' type='primary' />
+      <Button onClick={ updateResults } value='calculate difference' type='primary' />
       <Presentation time={ results } />
     </React.Fragment>
   )
