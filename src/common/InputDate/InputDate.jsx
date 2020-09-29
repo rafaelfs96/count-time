@@ -10,9 +10,11 @@ export default ({
   timeIntervals = 10,
   value, name, id, isDisable, onChange
 }) => {
+  const CustomInput = ({ value, onClick, disabled }) => <input disabled={ disabled } className='CustomInput' type="text" onClick={ onClick } value={ value } />
   return (
     <DatePicker
       // showTimeSelect
+      customInput={ <CustomInput /> }
       timeIntervals={ timeIntervals }
       selected={ value }
       dateFormat={ dateFormat }
@@ -20,7 +22,7 @@ export default ({
       name={ id }
       id={ id }
       showTimeInput
-      timeInputLabel='Time: '
+      timeInputLabel='Time:'
       disabled={ isDisable }
       onChange={ onChange }
     />
