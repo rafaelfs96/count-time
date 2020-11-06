@@ -3,14 +3,14 @@ import React from 'react'
 
 import Clock from './Clock/Clock'
 import TimeBetween from './TimeBetween/TimeBetween'
-import List from './TimeList/List'
+import TimeList from './TimeList/TimeList'
 
 function App() {
   return (
     <div className={ styles.App }>
       <Clock />
       <TimeBetween />
-      <List />
+      <TimeList />
     </div>
   );
 }

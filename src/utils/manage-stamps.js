@@ -2,7 +2,7 @@ const LIST_NAME = 'timelist'
 const MAX_ITEMS = 10
 
 export function getTimeListData() {
-  const list = JSON.parse(sessionStorage.getItem(LIST_NAME)) || []
+  const list = JSON.parse(localStorage.getItem(LIST_NAME)) || []
   return list
 }
 
@@ -19,5 +19,5 @@ export function addToTimeListData({value}) {
 
   list.unshift({id, currentDate, value})
 
-  sessionStorage.setItem(LIST_NAME, JSON.stringify(list))
+  localStorage.setItem(LIST_NAME, JSON.stringify(list))
 }
