@@ -1,7 +1,7 @@
 import './Button.scss'
 import React from 'react'
 
-export default ({ type, onClick, value }) => {
+function Button({ type, onClick, value }) {
   return (
   <button className={ `button button--${ type }` }
     onClick={ onClick }>
@@ -9,3 +9,5 @@ export default ({ type, onClick, value }) => {
   </button>
   )
 }
+
+export default Button

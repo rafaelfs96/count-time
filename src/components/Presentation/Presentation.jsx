@@ -1,6 +1,8 @@
 import './Presentation.scss'
 import React from 'react'
 
-export default props => {
-  return <div className='presentation'>{ props.time }</div>
+function Presentation({ time }) {
+  return <div className='presentation'>{ time }</div>
 }
+
+export default Presentation

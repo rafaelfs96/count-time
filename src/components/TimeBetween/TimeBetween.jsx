@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { timeBetween } from '../../utils/time'
+import { addToTimeListData } from '../../utils/manage-stamps'
 
 import DatePicker from '../DatePicker/DatePicker'
 import TimeBetweenStyles from './TimeBetween.module.scss'
 import Presentation from '../Presentation/Presentation'
 import Button from '../../common/Button/Button'
 
-export default () => {
+function TimeBetween() {
   const [start, setStart] = useState({ date: new Date(), useNow: false })
   const [end, setEnd] = useState({ date: '', useNow: true })
   const [results, setResult] = useState('')
@@ -21,6 +22,8 @@ export default () => {
 
     const updatedResults = timeBetween({startDate: sdate, endDate: edate})
     setResult(updatedResults)
+
+    addToTimeListData({value: updatedResults})
   }
 
   return (
@@ -32,8 +35,10 @@ export default () => {
           useNow={ end.useNow } change={ setEnd } scss={ TimeBetweenStyles.datepicker__calendar } />  
       </div>
 
-      <Button onClick={ updateResults } value='calculate difference' type='primary' />
+      <Button onClick={ updateResults } value='calculate' type='primary' />
       <Presentation time={ results } />
     </React.Fragment>
   )
 }
+
+export default TimeBetween
