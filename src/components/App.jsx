@@ -1,16 +1,18 @@
 import styles from './App.module.scss'
-import React from 'react'
+import React, { useState } from 'react'
 
+import Header from './Header/Header'
 import Clock from './Clock/Clock'
 import TimeBetween from './TimeBetween/TimeBetween'
-import TimeList from './TimeList/TimeList'
 
 function App() {
+  const [theme, setTheme] = useState('dark')
+
   return (
-    <div className={ styles.App }>
+    <div className={styles.App}>
+      <Header setTheme={setTheme} theme={theme} />
       <Clock />
       <TimeBetween />
-      <TimeList />
     </div>
   );
 }

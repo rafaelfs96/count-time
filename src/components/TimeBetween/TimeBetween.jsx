@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { timeBetween } from '../../utils/time'
-import { addToTimeListData } from '../../utils/manage-stamps'
 
 import DatePicker from '../DatePicker/DatePicker'
 import TimeBetweenStyles from './TimeBetween.module.scss'
@@ -22,8 +21,6 @@ function TimeBetween() {
 
     const updatedResults = timeBetween({startDate: sdate, endDate: edate})
     setResult(updatedResults)
-
-    addToTimeListData({value: updatedResults})
   }
 
   return (
