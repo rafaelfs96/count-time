@@ -9,7 +9,7 @@ function App() {
   const [theme, setTheme] = useState('dark')
 
   return (
-    <div className={styles.App}>
+    <div className={[styles.App, `theme-${theme}`].join(' ')}>
       <Header setTheme={setTheme} theme={theme} />
       <Clock />
       <TimeBetween />

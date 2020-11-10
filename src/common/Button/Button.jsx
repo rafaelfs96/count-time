@@ -5,7 +5,7 @@ function Button({ type, onClick, value }) {
   return (
   <button className={ `button button--${ type }` }
     onClick={ onClick }>
-      { value }
+      { value || '' }
   </button>
   )
 }

@@ -3,3 +3,13 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+.theme-light {
+  --background: white;
+  --font-color: black;
+}
+
+.theme-dark {
+  --background: black;
+  --font-color: white;
+}
