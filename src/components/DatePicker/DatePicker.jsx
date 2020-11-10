@@ -2,7 +2,7 @@ import React from 'react'
 
 import InputDate from '../../common/InputDate/InputDate'
 
-export default ({ change, useNow, scss, id, text, value }) => {
+function DatePicker({ change, useNow, scss, id, text, value }) {
   const dateChangeHandler = inputValue => {
     change({date: inputValue, useNow})
   }
@@ -24,3 +24,5 @@ export default ({ change, useNow, scss, id, text, value }) => {
     </div>
   )
 }
+
+export default DatePicker

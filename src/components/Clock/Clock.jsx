@@ -3,16 +3,14 @@ import React, { useState, useEffect } from 'react'
 
 import { time, format } from '../../utils/time'
 
-export default () => {
+function Clock() {
   const [date, setTime] = useState(time())
 
   useEffect(() => {
-    updateTime()
-  })
+    const interval = setInterval(() => setTime(time()), 500)
 
-  const updateTime = () => {
-    setTimeout(() => setTime(time()), 500)
-  }
+    return () => clearInterval(interval)
+  }, [])
 
   const { day, month, year, hour, minute, second } = format(date)
 
@@ -29,3 +27,5 @@ export default () => {
     </React.Fragment>
   )
 }
+
+export default Clock

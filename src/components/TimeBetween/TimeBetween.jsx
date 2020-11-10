@@ -6,7 +6,7 @@ import TimeBetweenStyles from './TimeBetween.module.scss'
 import Presentation from '../Presentation/Presentation'
 import Button from '../../common/Button/Button'
 
-export default () => {
+function TimeBetween() {
   const [start, setStart] = useState({ date: new Date(), useNow: false })
   const [end, setEnd] = useState({ date: '', useNow: true })
   const [results, setResult] = useState('')
@@ -32,8 +32,10 @@ export default () => {
           useNow={ end.useNow } change={ setEnd } scss={ TimeBetweenStyles.datepicker__calendar } />  
       </div>
 
-      <Button onClick={ updateResults } value='calculate difference' type='primary' />
+      <Button onClick={ updateResults } value='calculate' type='primary' />
       <Presentation time={ results } />
     </React.Fragment>
   )
 }
+
+export default TimeBetween
