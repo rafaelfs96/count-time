@@ -1,5 +1,6 @@
 import './reset.scss'
 import './base.scss'
+import './theme.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
