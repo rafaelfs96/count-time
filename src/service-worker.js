@@ -51,7 +51,9 @@ registerRoute(
   new CacheFirst({
     cacheName: 'images',
     plugins: [
-      new ExpirationPlugin({ maxEntries: 50 })
+      new ExpirationPlugin({
+        maxEntries: 50
+      })
     ],
   })
 )
@@ -61,7 +63,9 @@ registerRoute(
   new StaleWhileRevalidate({
     cacheName: 'json-files',
     plugins: [
-      new ExpirationPlugin({ maxEntries: 50 })
+      new ExpirationPlugin({
+        maxEntries: 50
+      })
     ],
   })
 );
@@ -69,7 +73,13 @@ registerRoute(
 registerRoute(
   ({url}) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
   new StaleWhileRevalidate({
-    cacheName: 'google-api'
+    cacheName: 'google-api',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60
+      })
+    ]
   }),
 );
 
