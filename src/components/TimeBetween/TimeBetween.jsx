@@ -13,7 +13,7 @@ function TimeBetween() {
 
   const updateResults = () => {
     if((!start.date && !start.useNow) || (!end.date && !end.useNow)) {
-      setResult('Selecione um horário válido')
+      setResult('Select a valid date')
       return 
     }
     const sdate = start.useNow ? new Date() : new Date(start.date)
@@ -26,9 +26,9 @@ function TimeBetween() {
   return (
     <React.Fragment>
       <div className={TimeBetweenStyles.datepicker}>
-        <DatePicker text='Data Inicial' id='startDate' value={ start.date }
+        <DatePicker text='Initial Date' id='startDate' value={ start.date }
           useNow={ start.useNow } change={ setStart } scss={ TimeBetweenStyles.datepicker__calendar } />
-        <DatePicker text='Data Final' id='endDate' value={ end.date }
+        <DatePicker text='Final Date' id='endDate' value={ end.date }
           useNow={ end.useNow } change={ setEnd } scss={ TimeBetweenStyles.datepicker__calendar } />  
       </div>
 

@@ -17,7 +17,7 @@ function DatePicker({ change, useNow, scss, id, text, value }) {
       <InputDate value={ value } id={ id } name={ id }
         isDisable={ useNow } onChange={ dateChangeHandler } />
       <div>
-        <label htmlFor={ `use-now_${id}` }>Usar data atual?</label>
+        <label htmlFor={ `use-now_${id}` }>Use current date?</label>
         <input type='checkbox' name={ `use-now_${id}` } id={ `use-now_${id}` }
           value={ useNow } onChange={ useNowChangeHandler } checked={ useNow } />
       </div>
