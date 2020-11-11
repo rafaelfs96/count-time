@@ -46,13 +46,20 @@ registerRoute(
   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
 );
 
-// An example runtime caching route for requests that aren't handled by the
-// precache, in this case same-origin .png requests like those from in public/
 registerRoute(
-  // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && (url.pathname.endsWith('.png') || url.pathname.endsWith('.ico') || url.pathname.endsWith('.json')), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  ({ url }) => url.pathname.endsWith('.png') || url.pathname.endsWith('.ico'),
   new CacheFirst({
     cacheName: 'images',
+    plugins: [
+      new ExpirationPlugin({ maxEntries: 50 })
+    ],
+  })
+)
+
+registerRoute(
+  ({ url }) => url.pathname.endsWith('.json'),
+  new StaleWhileRevalidate({
+    cacheName: 'json-files',
     plugins: [
       new ExpirationPlugin({ maxEntries: 50 })
     ],
