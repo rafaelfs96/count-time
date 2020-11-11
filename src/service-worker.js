@@ -50,28 +50,21 @@ registerRoute(
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ request }) => request.destination === 'image', // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  ({ url }) => url.origin === self.location.origin && (url.pathname.endsWith('.png') || url.pathname.endsWith('.ico') || url.pathname.endsWith('.json')), // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new CacheFirst({
     cacheName: 'images',
     plugins: [
       new ExpirationPlugin({ maxEntries: 50 })
     ],
   })
-)
+);
 
 registerRoute(
-  ({ url }) => url.origin === 'https://fonts.googleapis.com',
+  ({url}) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
   new StaleWhileRevalidate({
-    cacheName: 'google-fonts-stylesheets'
-  })
-)
-
-registerRoute(
-  ({url}) => url.origin === self.location.origin && url.pathname.endsWith('.json'),
-  new StaleWhileRevalidate({
-    cacheName: 'json-files'
-  })
-)
+    cacheName: 'google-api'
+  }),
+);
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
