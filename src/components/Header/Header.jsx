@@ -1,4 +1,4 @@
-import styles from './Header.module.scss'
+import './Header.scss'
 
 import React from 'react'
 
@@ -6,11 +6,16 @@ import Button from '../../common/Button/Button'
 
 function Header({ setTheme, theme }) {
   const changeTheme = () => {
-    if(theme === 'dark') setTheme('light')
-    else if(theme === 'light') setTheme('dark')
+    if(theme === 'dark') {
+      setTheme('light')
+      localStorage.setItem('theme', 'light')
+    } else if(theme === 'light') {
+      setTheme('dark')
+      localStorage.setItem('theme', 'dark')
+    }
   }
   return (
-    <header className={ styles.Header }>
+    <header className='Header'>
       <Button type='primary' value='change theme' onClick={changeTheme} />
     </header>
   )

@@ -1,13 +1,18 @@
+@use 'sass:map';
+@import 'variables/colors';
+
 [class*="theme-"] {
   transition: background .2s ease, color .2s ease;
 }
 
 .theme-light {
-  --background: white;
-  --font-color: black;
+  --background: #{map.get($theme-light, 'bg')};
+  --font-color: #{map.get($theme-light, 'font')};
+  --link-color: #{map.get($theme-light, 'link')};
 }
 
 .theme-dark {
-  --background: black;
-  --font-color: white;
+  --background: #{map.get($theme-dark, 'bg')};
+  --font-color: #{map.get($theme-dark, 'font')};
+  --link-color: #{map.get($theme-dark, 'link')};
 }
