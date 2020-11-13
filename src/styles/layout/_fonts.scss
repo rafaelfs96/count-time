@@ -1,0 +1,15 @@
+@import '../variables/breakpoints';
+
+:root {
+  --button-font-size: 16px;
+  --clock-font-size: 52px;
+  --presentation-font-size: 24px;
+  --datepicker-label-font-size: 18px;
+
+  @media (max-width: $bp-mobile) {
+    --button-font-size: 14px;
+    --clock-font-size: 32px;
+    --presentation-font-size: 18px;
+    --datepicker-label-font-size: 16px;
+  }
+}

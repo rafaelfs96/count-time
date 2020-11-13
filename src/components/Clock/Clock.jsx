@@ -1,4 +1,4 @@
-import styles from './Clock.module.scss'
+import './Clock.scss'
 import React, { useState, useEffect } from 'react'
 
 import { time, format } from '../../utils/time'
@@ -16,11 +16,11 @@ function Clock() {
 
   return (
     <React.Fragment>
-      <h1 className={styles.content}>
-        <time className={styles.content__time} dateTime={ `${hour}:${minute}:${second}` }>
+      <h1 className='Clock'>
+        <time className='Clock__time' dateTime={ `${hour}:${minute}:${second}` }>
           { `${hour}:${minute}:${second}` }
         </time>
-        <time className={styles.content__date} dateTime={ `${month}/${day}/${year}` }>
+        <time className='Clock__date' dateTime={ `${month}/${day}/${year}` }>
           { `${month}/${day}/${year}` }
         </time>
       </h1>

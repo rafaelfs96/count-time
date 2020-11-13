@@ -1,8 +1,8 @@
+import './TimeBetween.scss'
 import React, { useState } from 'react'
 import { timeBetween } from '../../utils/time'
 
 import DatePicker from '../DatePicker/DatePicker'
-import TimeBetweenStyles from './TimeBetween.module.scss'
 import Presentation from '../Presentation/Presentation'
 import Button from '../../common/Button/Button'
 
@@ -25,11 +25,11 @@ function TimeBetween() {
 
   return (
     <React.Fragment>
-      <div className={TimeBetweenStyles.datepicker}>
+      <div className='Datepicker'>
         <DatePicker text='Initial Date' id='startDate' value={ start.date }
-          useNow={ start.useNow } change={ setStart } scss={ TimeBetweenStyles.datepicker__calendar } />
+          useNow={ start.useNow } change={ setStart } scss='Datepicker__calendar' />
         <DatePicker text='Final Date' id='endDate' value={ end.date }
-          useNow={ end.useNow } change={ setEnd } scss={ TimeBetweenStyles.datepicker__calendar } />  
+          useNow={ end.useNow } change={ setEnd } scss='Datepicker__calendar' />  
       </div>
 
       <Button onClick={ updateResults } value='calculate' type='primary' />

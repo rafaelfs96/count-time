@@ -1,11 +1,18 @@
-.datepicker {
+.Datepicker {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   color: var(--font-color);
+  
   &__calendar {
+    width: 80%;
+    max-width: 350px;
     display: flex;
     flex-flow: column nowrap;
     margin: 0px 20px 20px;
+
+    & label {
+      font-size: var(--datepicker-label-font-size);
+    }
   }
 }

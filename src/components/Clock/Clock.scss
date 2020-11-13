@@ -1,15 +1,12 @@
-.content {
+.Clock {
   display: flex;
   flex-flow: column;
   align-items: center;
   color: var(--font-color);
   
   &__time, &__date {
-    font-size: 5rem;
+    font-size: var(--clock-font-size);
     font-weight: 500;
-    @media screen and (max-width: 768px) {
-      font-size: 3rem;
-    }
   }
 }
   

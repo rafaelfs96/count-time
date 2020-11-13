@@ -1,4 +1,5 @@
 .Presentation {
-  font-size: 25px;
+  margin: 20px;
+  font-size: var(--presentation-font-size);
   color: var(--font-color);
 }

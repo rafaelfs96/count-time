@@ -1,0 +1,11 @@
+@import '../styles/variables/breakpoints';
+
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+  height: 100vh;
+  background-color: var(--background);
+}
