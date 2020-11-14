@@ -2,7 +2,7 @@ import './Header.scss'
 
 import React from 'react'
 
-import Button from '../../common/Button/Button'
+import IconButton from '../../common/IconButton/IconButton'
 
 function Header({ setTheme, theme }) {
   const changeTheme = () => {
@@ -14,9 +14,11 @@ function Header({ setTheme, theme }) {
       localStorage.setItem('theme', 'dark')
     }
   }
+
+  const icon = theme === 'dark' ? 'sun' : 'moon'
   return (
     <header className='Header'>
-      <Button type='primary' value='change theme' onClick={changeTheme} />
+      <IconButton type='solid' icon={icon} onClick={changeTheme} />
     </header>
   )
 }

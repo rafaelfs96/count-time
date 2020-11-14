@@ -71,7 +71,11 @@ registerRoute(
 );
 
 registerRoute(
-  ({url}) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
+  ({url}) => [
+    'https://fonts.googleapis.com',
+    'https://fonts.gstatic.com',
+    'https://cdnjs.cloudflare.com'
+  ].includes(url.origin),
   new StaleWhileRevalidate({
     cacheName: 'google-api',
     plugins: [

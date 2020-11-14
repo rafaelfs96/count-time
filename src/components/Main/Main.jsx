@@ -6,7 +6,7 @@ import TimeBetween from '../TimeBetween/TimeBetween'
 
 function Main () {
   return (
-    <div class='Main'>
+    <div className='Main'>
       <Clock />
       <TimeBetween />
     </div>
