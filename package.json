@@ -8,7 +8,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "yarn build && serve -s build -l 5000",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -30,19 +29,18 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
-    "gh-pages": "^3.2.0",
+    "gh-pages": "^3.2.3",
     "jest-date-mock": "^1.0.8",
     "react": "^17.0.2",
-    "react-datepicker": "^4.1.0",
+    "react-datepicker": "^4.1.1",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "sass": "^1.34.0",
-    "serve": "^11.3.2",
-    "web-vitals": "^1.1.2",
+    "react-scripts": "^4.0.3",
+    "sass": "^1.35.1",
+    "web-vitals": "^2.0.1",
     "workbox-background-sync": "^6.1.5",
     "workbox-broadcast-update": "^6.1.5",
     "workbox-cacheable-response": "^6.1.5",
